@@ -14,8 +14,8 @@ export function createClient() {
         },
         setAll(cookiesToSet:any) {
           try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
+            cookiesToSet.forEach((cookie: any) =>
+              cookieStore.set(cookie.name, cookie.value, cookie.options)
             );
           } catch {
             // من Server Component - يتم تجاهله، الـ middleware بيحدّث الجلسة
